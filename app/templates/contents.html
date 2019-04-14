@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block contents %}
+<!-- Portfolio Grid Section -->
+<section class="portfolio mt-5" id="portfolio">
+    <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">{{ feed_name }}</h2>
+        <hr class="star-dark mb-5">
+        
+        {% block content %}
+        {% endblock %}
+    </div>
+</section>
+
+{% endblock %}

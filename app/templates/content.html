@@ -1,0 +1,46 @@
+{% extends "contents.html" %}
+
+{% block content %}
+
+<!-- <div class="card my-3">
+    <div class="card-header abstract-statement-bg">
+    <h4 class="text-white mt-2">
+        {{ statement }}
+    </h4>
+    </div>
+</div> -->
+<div class="row justify-content-center">
+    <!-- Content Pro -->
+    <div class="my-3 p-3 bg-white rounded box-shadow justify-content-center">
+        <!-- <h5 class="border-bottom border-gray pb-2 mb-0">Supported Tweets</h5> -->
+        <!-- {{ pro | length }} -->
+        <span id=listSupportOriginTweets class="{{chart_support_tweets}}">
+            {% for i in range(entries|length) %}
+            <div class="row justify-content-center py-4">
+                <div class="card" style="width: {{widths[i]}};">
+                    {{ entries[i].content[0].value|safe }}
+                    <div class="card-body">
+                        <a class="lead" href="{{ entries[i].link }}">
+                            <p class="lead">{{ entries[i].title }}</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr class="star-dark mb-5">
+
+            {% endfor %}
+        </span>
+        <span id=listSupportTweets>
+        </span>
+        <!-- <div class="text-center mt-4">
+            <button id=loadmore-pro class="btn btn-outline-secondary">Loadmore</button>
+        </div> -->
+    </div>
+    <!-- <div class="col-md-12">
+        <div class="text-center my-4">
+            <button id=loadmore-tweets class="btn btn-outline-secondary">Loadmore</button>
+        </div>
+    </div> -->
+</div>
+
+{% endblock %}
