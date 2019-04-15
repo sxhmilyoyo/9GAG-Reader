@@ -2,7 +2,7 @@ import os
 import unittest
 import time
 
-from main import app
+from app import app
 
 
 class BasicTests(unittest.TestCase):
@@ -30,6 +30,11 @@ class BasicTests(unittest.TestCase):
     def test_feed_Funny_page(self):
         time.sleep(5)
         response = self.client.get('/feeds/Funny', follow_redirects=True)
+        self.assertEqual(response.status_code, 200)
+
+    def test_feed_Hot_page(self):
+        time.sleep(5)
+        response = self.client.get('/feeds/Hot', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
 

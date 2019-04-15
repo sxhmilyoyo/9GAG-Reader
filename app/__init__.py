@@ -36,7 +36,7 @@ cache.init_app(app)
 
 @app.route('/', methods=['GET'])
 def home_page():
-    feed_names = ['Awesome', 'DarkHumor', 'Funny']
+    feed_names = ['Awesome', 'DarkHumor', 'Funny', 'Hot']
     return render_template('feeds.html', is_root=True, feed_names=feed_names)
 
 
