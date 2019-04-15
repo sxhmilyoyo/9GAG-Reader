@@ -18,7 +18,7 @@
 
 ## Test
 - I used the Unittest framework to test my application. I mainly tested whether 5 requests: main page, and 4 feed pages.
-- `python test.py`
+- `python -m unittest test.py`
 
 ## Deployment
 - To deploy my application on web server, I used the Heroku, a cloud application platform.
