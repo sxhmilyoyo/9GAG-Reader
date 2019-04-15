@@ -37,7 +37,7 @@ cache.init_app(app)
 @app.route('/', methods=['GET'])
 def home_page():
     feed_names = ['Awesome', 'DarkHumor', 'Funny']
-    return render_template('feeds.html', feed_names=feed_names)
+    return render_template('feeds.html', is_root=True, feed_names=feed_names)
 
 
 @app.route('/feeds/<feed_name>', methods=['GET'])
@@ -64,9 +64,9 @@ def show_feed(feed_name):
         widths.append(width)
     # with open("./entries.json", "w") as fp:
     #     json.dump(feed_contents.entries, fp, indent=4)
-    return render_template('content.html', feed_name=feed_name, entries=entries, widths=widths)
+    return render_template('content.html', is_root=False, feed_name=feed_name, entries=entries, widths=widths)
 
 
-api_port = int(os.environ.get("API_PORT", 700))
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=api_port, debug=True)
+# api_port = int(os.environ.get("API_PORT", 700))
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=api_port, debug=True)
